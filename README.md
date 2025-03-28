@@ -30,7 +30,7 @@ The original <b>ESP32-BLE-Keyboard</b> library has been cloned and modified to c
 
 ``` C++
 /**
- * This example turns the ESP32 into a Bluetooth LE keyboard that writes the words, presses Enter, presses a media key and then Ctrl+Alt+Delete
+ * This example turns the ESP32 into a NimBLE keyboard that writes the words, presses Enter, presses a media key and then Ctrl+Alt+Delete
  */
 #include <NimBleKeyboard.h>
 
@@ -38,7 +38,7 @@ BleKeyboard bleKeyboard;
 
 void setup() {
   Serial.begin(115200);
-  Serial.println("Starting BLE work!");
+  Serial.println("Starting NimBLE work!");
   bleKeyboard.begin();
 }
 
