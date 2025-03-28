@@ -1,10 +1,10 @@
-# ESP32 BLE Keyboard library
+# ESP32 NIMBLE Keyboard library
 
-This library allows you to make the ESP32 act as a Bluetooth Keyboard and control what it does.  
-You might also be interested in:
-- [ESP32-BLE-Mouse](https://github.com/T-vK/ESP32-BLE-Mouse)
-- [ESP32-BLE-Gamepad](https://github.com/lemmingDev/ESP32-BLE-Gamepad)
+This library allows you to make the ESP32 act as a <b>NimBLE-Arduino 2.x</b> Keyboard and control what it does.
 
+# Credits
+This project is based on the excellent [ESP32-BLE-Keyboard](https://github.com/Berg0162/ESP32-NIMBLE-Keyboard) by <b>T-vK</b>.
+The original <b>ESP32-BLE-Keyboard</b> library has been cloned and modified to comply to the latest version of NimBLE-Arduino 2.x
 
 ## Features
 
@@ -22,9 +22,9 @@ You might also be interested in:
 
 ## Installation
 - (Make sure you can use the ESP32 with the Arduino IDE. [Instructions can be found here.](https://github.com/espressif/arduino-esp32#installation-instructions))
-- [Download the latest release of this library from the release page.](https://github.com/T-vK/ESP32-BLE-Keyboard/releases)
+- [Download the latest release of this library from the release page.](https://github.com/Berg0162/ESP32-NIMBLE-Keyboard/releases)
 - In the Arduino IDE go to "Sketch" -> "Include Library" -> "Add .ZIP Library..." and select the file you just downloaded.
-- You can now go to "File" -> "Examples" -> "ESP32 BLE Keyboard" and select any of the examples to get started.
+- You can now go to "File" -> "Examples" -> "ESP32 NIMBLE Keyboard" and select any of the examples to get started.
 
 ## Example
 
@@ -32,7 +32,7 @@ You might also be interested in:
 /**
  * This example turns the ESP32 into a Bluetooth LE keyboard that writes the words, presses Enter, presses a media key and then Ctrl+Alt+Delete
  */
-#include <BleKeyboard.h>
+#include <NimBleKeyboard.h>
 
 BleKeyboard bleKeyboard;
 
@@ -83,7 +83,7 @@ https://www.arduino.cc/reference/en/language/functions/usb/keyboard/
 
 Just remember that you have to use `bleKeyboard` instead of just `Keyboard` and you need these two lines at the top of your script:
 ```
-#include <BleKeyboard.h>
+#include <NimBleKeyboard.h>
 BleKeyboard bleKeyboard;
 ```
 
@@ -113,7 +113,7 @@ There is also a `setDelay` method to set a delay between each key event. E.g. `b
 This feature is meant to compensate for some applications and devices that can't handle fast input and will skip letters if too many keys are sent in a small time frame.  
 
 ## NimBLE-Mode
-The NimBLE mode enables a significant saving of RAM and FLASH memory.
+This version <b>exclusively</b> supports NimBLE-Arduino 2.x mode, enabling a significant saving of RAM and FLASH memory.
 
 ### Comparison (SendKeyStrokes.ino at compile-time)
 
@@ -137,26 +137,9 @@ Flash: [====      ]  44.2% (used 579158 bytes from 1310720 bytes)
 | `ESP.getFreeHeap()`   | 143.572 | 260.764 | **+ 117.192** |
 | `ESP.getSketchSize()` | 994.224 | 579.264 | **- 414.960** |
 
-## How to activate NimBLE mode?
+## Credits to original author and contributors
 
-### ArduinoIDE: 
-Uncomment the first line in BleKeyboard.h
-```C++
-#define USE_NIMBLE
-```
-
-### PlatformIO:
-Change your `platformio.ini` to the following settings
-```ini
-lib_deps = 
-  NimBLE-Arduino
-
-build_flags = 
-  -D USE_NIMBLE
-```
-
-## Credits
-
+Original author [ T-vK](https://github.com/Berg0162/ESP32-NIMBLE-Keyboard)<br>
 Credits to [chegewara](https://github.com/chegewara) and [the authors of the USB keyboard library](https://github.com/arduino-libraries/Keyboard/) as this project is heavily based on their work!  
 Also, credits to [duke2421](https://github.com/T-vK/ESP32-BLE-Keyboard/issues/1) who helped a lot with testing, debugging and fixing the device descriptor!
 And credits to [sivar2311](https://github.com/sivar2311) for adding NimBLE support, greatly reducing the memory footprint, fixing advertising issues and for adding the `setDelay` method.
