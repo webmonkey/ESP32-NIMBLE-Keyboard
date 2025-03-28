@@ -1,9 +1,9 @@
 # ESP32 NIMBLE Keyboard library
 
-This library allows you to make the ESP32 act as a NimBLE-Arduino 2.x Keyboard and control what it does.
+This library allows you to make the ESP32 act as a <b>NimBLE-Arduino 2.x</b> Keyboard and control what it does.
 
 # Credits
-This project is based on the excellent [ESP32-BLE-Keyboard]([https://github.com/Berg0162/ESP32-NIMBLE-Keyboard) by T-vK.
+This project is based on the excellent [ESP32-BLE-Keyboard](https://github.com/Berg0162/ESP32-NIMBLE-Keyboard) by <b>T-vK</b>.
 The original <b>ESP32-BLE-Keyboard</b> library has been cloned and modified to comply to the latest version of NimBLE-Arduino 2.x
 
 ## Features
@@ -22,9 +22,9 @@ The original <b>ESP32-BLE-Keyboard</b> library has been cloned and modified to c
 
 ## Installation
 - (Make sure you can use the ESP32 with the Arduino IDE. [Instructions can be found here.](https://github.com/espressif/arduino-esp32#installation-instructions))
-- [Download the latest release of this library from the release page.](https://github.com/T-vK/ESP32-BLE-Keyboard/releases)
+- [Download the latest release of this library from the release page.](https://github.com/Berg0162/ESP32-NIMBLE-Keyboard/releases)
 - In the Arduino IDE go to "Sketch" -> "Include Library" -> "Add .ZIP Library..." and select the file you just downloaded.
-- You can now go to "File" -> "Examples" -> "ESP32 BLE Keyboard" and select any of the examples to get started.
+- You can now go to "File" -> "Examples" -> "ESP32 NIMBLE Keyboard" and select any of the examples to get started.
 
 ## Example
 
