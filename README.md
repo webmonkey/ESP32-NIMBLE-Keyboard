@@ -4,7 +4,8 @@ This library allows you to make the ESP32 act as a <b>NimBLE-Arduino 2.x</b> Key
 
 # Credits
 This project is based on the excellent [ESP32-BLE-Keyboard](https://github.com/Berg0162/ESP32-NIMBLE-Keyboard) by <b>T-vK</b>.
-The original <b>ESP32-BLE-Keyboard</b> library has been cloned and modified to comply to the latest version of NimBLE-Arduino 2.x
+The original <b>ESP32-BLE-Keyboard</b> library has been cloned and modified to comply the latest version of NimBLE-Arduino 2.x!
+This library is used in the project [Zwift-Control](https://github.com/Berg0162/Zwift-Control)
 
 ## Features
 
