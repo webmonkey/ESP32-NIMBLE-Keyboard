@@ -139,7 +139,7 @@ Flash: [====      ]  44.2% (used 579158 bytes from 1310720 bytes)
 
 ## Credits to original author and contributors
 
-Original author [ T-vK]([https://github.com/Berg0162/ESP32-NIMBLE-Keyboard)
+Original author [ T-vK](https://github.com/Berg0162/ESP32-NIMBLE-Keyboard)<br>
 Credits to [chegewara](https://github.com/chegewara) and [the authors of the USB keyboard library](https://github.com/arduino-libraries/Keyboard/) as this project is heavily based on their work!  
 Also, credits to [duke2421](https://github.com/T-vK/ESP32-BLE-Keyboard/issues/1) who helped a lot with testing, debugging and fixing the device descriptor!
 And credits to [sivar2311](https://github.com/sivar2311) for adding NimBLE support, greatly reducing the memory footprint, fixing advertising issues and for adding the `setDelay` method.
