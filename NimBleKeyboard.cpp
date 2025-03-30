@@ -94,6 +94,8 @@ void BleKeyboard::begin(void)
   NimBLEDevice::init(deviceName);
   NimBLEServer* pServer = NimBLEDevice::createServer();
   pServer->setCallbacks(this);
+  // Set server auto-restart advertise on
+  pServer->advertiseOnDisconnect(true);
 
   hid = new NimBLEHIDDevice(pServer);
   inputKeyboard = hid->getInputReport(KEYBOARD_ID);  // <-- input REPORTID from report map
@@ -103,9 +105,16 @@ void BleKeyboard::begin(void)
   outputKeyboard->setCallbacks(this);
 
   hid->setManufacturer(deviceManufacturer);
-
   hid->setPnp(0x02, vid, pid, version);
   hid->setHidInfo(0x00, 0x01);
+
+  // Set the Generic Access Appearance value from default: [0] a.k.a. "Unknown" to HID_KEYBOARD
+  int RespErr = ble_svc_gap_device_appearance_set(HID_KEYBOARD);
+  if(RespErr == 0) {
+      ESP_LOGI(LOG_TAG, "Generic Access Appearance set to: [%d]", HID_KEYBOARD); 
+  } else {
+      ESP_LOGD(LOG_TAG, "Unable to set Generic Access Appearance value!");      
+  } 
 
   NimBLEDevice::setSecurityAuth(true, true, true);
 
@@ -116,6 +125,7 @@ void BleKeyboard::begin(void)
 
   advertising = pServer->getAdvertising();
   advertising->setAppearance(HID_KEYBOARD);
+  advertising->setName(deviceName);
   advertising->addServiceUUID(hid->getHidService()->getUUID());
   advertising->enableScanResponse(false);
   advertising->start();
