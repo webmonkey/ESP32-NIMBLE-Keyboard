@@ -124,6 +124,7 @@ private:
   bool               connected = false;
   uint32_t           _delay_ms = 7;
   void delay_ms(uint64_t ms);
+  bool              initialised = false;
 
   uint16_t vid       = 0x05ac;
   uint16_t pid       = 0x820a;
@@ -132,6 +133,7 @@ private:
 public:
   BleKeyboard(std::string deviceName = "ESP32 Keyboard", std::string deviceManufacturer = "Espressif", uint8_t batteryLevel = 100);
   void begin(void);
+  void init(void);
   void end(void);
   void sendReport(KeyReport* keys);
   void sendReport(MediaKeyReport* keys);
