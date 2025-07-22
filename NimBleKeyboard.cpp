@@ -118,14 +118,6 @@ void BleKeyboard::begin(void)
   hid->setPnp(0x02, vid, pid, version);
   hid->setHidInfo(0x00, 0x01);
 
-  // Set the Generic Access Appearance value from default: [0] a.k.a. "Unknown" to HID_KEYBOARD
-  int RespErr = ble_svc_gap_device_appearance_set(HID_KEYBOARD);
-  if(RespErr == 0) {
-      ESP_LOGI(LOG_TAG, "Generic Access Appearance set to: [%d]", HID_KEYBOARD); 
-  } else {
-      ESP_LOGD(LOG_TAG, "Unable to set Generic Access Appearance value!");      
-  } 
-
   NimBLEDevice::setSecurityAuth(true, true, true);
 
   hid->setReportMap((uint8_t*)_hidReportDescriptor, sizeof(_hidReportDescriptor));
