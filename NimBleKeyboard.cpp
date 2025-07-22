@@ -92,8 +92,8 @@ BleKeyboard::BleKeyboard(std::string deviceName, std::string deviceManufacturer,
 void BleKeyboard::init(void)
 {
   if(!initialised) {
-    BLEDevice::init(deviceName);
-    BLEServer* pServer = BLEDevice::createServer();
+    NimBLEDevice::init(deviceName);
+    NimBLEServer* pServer = NimBLEDevice::createServer();
     pServer->setCallbacks(this);
     initialised = true;
   }
