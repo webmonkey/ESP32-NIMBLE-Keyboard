@@ -4,7 +4,6 @@
 #if defined(CONFIG_BT_ENABLED)
 
 #include <NimBLEDevice.h>
-#include <nimble/nimble/host/services/gap/include/services/gap/ble_svc_gap.h>
 #include <NimBLEHIDDevice.h>
 #include "Print.h"
 
