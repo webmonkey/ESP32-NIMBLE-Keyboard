@@ -2,7 +2,8 @@ name: ESP32 NimBLE Keyboard CI Build
 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - main
   pull_request:
 
 jobs:
